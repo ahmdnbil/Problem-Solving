@@ -27,7 +27,7 @@ void main(void)
         local_intStarsNo+=2;
         local_intSpacesNo--;
 
-        if(i != local_intRows)
+        if(i != local_intRows -1 )
         printf("\n");
     }
 }
