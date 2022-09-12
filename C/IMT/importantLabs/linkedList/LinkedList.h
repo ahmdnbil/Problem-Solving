@@ -10,6 +10,8 @@ struct Node_type
 };
 
 void AddNode(u32 val);
-void PrintLinkedList(void);
+void printLinkedList(void);
+void addNodeIndex(u32 val,u32 index);
+void deleteNode(u32 val);
 
 #endif
