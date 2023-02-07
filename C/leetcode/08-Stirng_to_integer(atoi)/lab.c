@@ -44,7 +44,7 @@ int numberCount(char *s)
 
 int myAtoi(char * s)
 {
-    int i=0,number=0,mul=1,flag=0,count,numberFlag=0,numbersCount=0,signFlag=0;
+    int i=0,number=0,mul=1,flag=0,count,numberFlag=0,numbersCount=0;
     count =numberCount(s);
     while(s[i] != '\0')
     {
@@ -61,21 +61,16 @@ int myAtoi(char * s)
             else if (s[i] == '-')
             {
                 mul = -1;
-                if(signFlag && numberFlag ) return number;
-                else if(signFlag && !numberFlag ) return 0;
-                else if (!signFlag && numberFlag) return number;
-                signFlag=1;
+                if(numberFlag ) return number;
+                numberFlag=1;
             }
             else if (s[i] == '+')
             {
                 mul = 1;
-                if(signFlag && numberFlag ) return number;
-                else if(signFlag && !numberFlag ) return 0;
-                else if (!signFlag && numberFlag) return number;
-                signFlag=1;
+                if(numberFlag ) return number;
+                numberFlag=1;
             }
             else if (s[i]==' ' &&  numberFlag==1) return number;
-            else if (s[i]==' ' &&  signFlag==1) return number;
             
         
             //for limits constraint
