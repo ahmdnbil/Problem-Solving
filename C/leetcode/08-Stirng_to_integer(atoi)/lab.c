@@ -1,16 +1,10 @@
 #define MAX_INT_POS 2147483647
 #define MAX_INT_NEG -2147483648
 
-//check if char is an valid number or not
-int numberOrNot(char s)
-{
-    return ((s>='0') && (s <= ('0'+9))) ? 1:0;
-}
-
 //this will be vaild input
 int checkValidInput (char s)
 {
-    if (((s>='0') && (s <= ('0'+9))) || s == '+' || s =='-' || s== ' ') return 1;
+    if (((s>='0') && (s <= '9' )) || s == '+' || s =='-' || s== ' ') return 1;
     else return 0;
 }
 
@@ -19,11 +13,11 @@ int numberCount(char *s)
     int count =0,i=0,flag=0,numberFlag=0,nonZeroFlag=0;
     while(s[i]!='\0')
     {
-        if(numberOrNot(s[i]) || s[i]==' ' || s[i]=='+' || s[i] =='-')
+        if( (s[i]>='0' && s[i]<='9') || s[i]==' ' || s[i]=='+' || s[i] =='-')
         {
         flag=1;
 
-        if (numberOrNot(s[i]))
+        if (s[i]>='0' && s[i]<='9')
         {
             /*this if statment to count the numbers from first number in string which 
             is non-zero number for examble:-
@@ -51,7 +45,7 @@ int myAtoi(char * s)
         if(checkValidInput(s[i]))
         {
             flag=1;
-            if(numberOrNot(s[i]))
+            if(s[i]>='0' && s[i]<='9')
             {
                 numberFlag=1;
                 number=number *10+mul*(s[i]-'0');
