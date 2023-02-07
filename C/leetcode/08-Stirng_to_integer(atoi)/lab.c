@@ -1,96 +1,59 @@
-#define MAX_INT_POS 2147483647
-#define MAX_INT_NEG -2147483648
+#include <limits.h>
 
-//this will be vaild input
-int checkValidInput (char s)
+int numberCount(int s)
 {
-    if (((s>='0') && (s <= '9' )) || s == '+' || s =='-' || s== ' ') return 1;
-    else return 0;
-}
-
-int numberCount(char *s)
-{
-    int count =0,i=0,flag=0,numberFlag=0,nonZeroFlag=0;
-    while(s[i]!='\0')
+    char count=0;
+    while(s)
     {
-        if( (s[i]>='0' && s[i]<='9') || s[i]==' ' || s[i]=='+' || s[i] =='-')
-        {
-        flag=1;
-
-        if (s[i]>='0' && s[i]<='9')
-        {
-            /*this if statment to count the numbers from first number in string which 
-            is non-zero number for examble:-
-            "0000323"  --> 3
-            "10000323" --> 8
-            */ 
-            if (s[i] != '0' && !nonZeroFlag  ) nonZeroFlag=1;
-            if (nonZeroFlag) count++;
-            numberFlag=1;
-        }
-        else if (s[i] == ' ' && numberFlag == 1) return count;
-        }
-        else if (flag==1) return count;
-        i++;
+        count++;
+        s/=10;
     }
     return count;
 }
 
 int myAtoi(char * s)
 {
-    int i=0,number=0,mul=1,flag=0,count,numberFlag=0,numbersCount=0;
-    count =numberCount(s);
+    int i=0,number=0,sign=1,count=0,numberFlag=0;
     while(s[i] != '\0')
     {
-        if(checkValidInput(s[i]))
+        if(s[i]>='0' && s[i]<='9')
         {
-            flag=1;
-            if(s[i]>='0' && s[i]<='9')
-            {
-                numberFlag=1;
-                number=number *10+mul*(s[i]-'0');
-                numbersCount++;
-                
-            }
-            else if (s[i] == '-')
-            {
-                mul = -1;
-                if(numberFlag ) return number;
-                numberFlag=1;
-            }
-            else if (s[i] == '+')
-            {
-                mul = 1;
-                if(numberFlag ) return number;
-                numberFlag=1;
-            }
-            else if (s[i]==' ' &&  numberFlag==1) return number;
+            numberFlag=1;
+            number=number *10+sign*(s[i]-'0');
+            count=numberCount(number);
             
-        
-            //for limits constraint
-            if (count > 10 && number != 0)
-            {
-                if (number > 0) return MAX_INT_POS;
-                if (number < 0) return MAX_INT_NEG;
-            }
-            else if (count == 10 && number != 0)
-            {
-                if (number > 0)
-                {
-                    if (number >MAX_INT_POS/(int)pow(10,10-numbersCount)  ) return MAX_INT_POS;
-                    else if (number==MAX_INT_POS/(int)pow(10,10-numbersCount) && numbersCount==9 && s[i+1]-'0' > 7 ) return MAX_INT_POS;
-                }
-                else if (number < 0)
-                {
-                    if (number <MAX_INT_NEG/(int)pow(10,10-numbersCount)  ) return MAX_INT_NEG;
-                    else if (number==MAX_INT_NEG/(int)pow(10,10-numbersCount) && numbersCount==9 && s[i+1]-'0' > 8 ) return MAX_INT_NEG;
-                }
-                
-                
-            }
         }
-        else if (flag ==1) break;
-        else if (flag ==0) break;
+        else if (s[i] == '-' || s[i]== '+')
+        {
+            sign = s[i]== '+' ? 1:-1;
+            if(numberFlag ) return number;
+            numberFlag=1;
+        }
+        else if (s[i]==' ' &&  numberFlag==1) return number;
+        else if (s[i]==' ' &&  numberFlag==0)  {i++; continue;}
+        else break;
+        
+    
+        //for limits constraint
+        if (count == 10 && (s[i+1]<='9' && s[i+1]>='0'))
+        {
+            return number > 0 ? INT_MAX:INT_MIN;
+        }
+        else if (count == 9)
+        {
+            if (number > 0)
+            {
+                if (number >INT_MAX/(int)pow(10,10-count)  ) return INT_MAX;
+                else if (number==INT_MAX/(int)pow(10,10-count) && s[i+1]-'0' > 7 ) return INT_MAX;
+            }
+            else if (number < 0)
+            {
+                if (number <INT_MIN/(int)pow(10,10-count)  ) return INT_MIN;
+                else if (number==INT_MIN/(int)pow(10,10-count) && s[i+1]-'0' > 8 ) return INT_MIN;
+            }
+            
+            
+        }
         i++;
     }
     return number;
