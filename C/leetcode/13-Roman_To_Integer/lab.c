@@ -1,17 +1,16 @@
-int symToInt(char s)
+int romanLookupTable(char s)
 {
-    short int res;
     switch(s)
     {
-        case 'I': res=1;break;
-        case 'V': res=5;break;
-        case 'X': res=10;break;
-        case 'L': res=50;break;
-        case 'C': res=100;break;
-        case 'D': res=500;break;
-        case 'M': res=1000;break;
+        case 'I': return 1;break;
+        case 'V': return 5;break;
+        case 'X': return 10;break;
+        case 'L': return 50;break;
+        case 'C': return 100;break;
+        case 'D': return 500;break;
+        case 'M': return 1000;break;
     }
-    return res;
+    return 0;
 }
 
 int romanToInt(char * s){
@@ -20,21 +19,21 @@ int romanToInt(char * s){
     {
         if (s[i+1]!= '\0')
         {
-            if (symToInt(s[i]) >= symToInt(s[i+1]))
+            if (romanLookupTable(s[i]) >= romanLookupTable(s[i+1]))
             {
-                sum=sum+symToInt(s[i]);
+                sum=sum+romanLookupTable(s[i]);
                 i++;
             }
             else
             {
 
-                sum=sum+(symToInt(s[i+1]) -symToInt(s[i])) ;
+                sum=sum+(romanLookupTable(s[i+1]) -romanLookupTable(s[i])) ;
                 i=i+2;
             }
         }
         else 
         {
-            sum=sum+symToInt(s[i]);
+            sum=sum+romanLookupTable(s[i]);
             break;
         }
     }
