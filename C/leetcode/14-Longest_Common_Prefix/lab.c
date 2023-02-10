@@ -18,7 +18,7 @@ char* longestCommonPrefix(char ** strs, int strsSize){
             }
         }
         if((flag==0) && (count>0)) {minCount=count; flag=1;}
-        else if (count ==0) {minCount = count; break;}
+        else if (count ==0) return "";
         else if(count < minCount) minCount=count;
     }
     
@@ -29,7 +29,6 @@ char* longestCommonPrefix(char ** strs, int strsSize){
         ptr=strs[0];
         return ptr;
     }
-    else if (minCount==0) return "";
     else
     {
         minCount++;
