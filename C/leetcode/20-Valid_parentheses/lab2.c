@@ -1,3 +1,5 @@
+//this sol is valid on leet (:
+
 #define MAXSTACK 10000
 
 typedef struct stack
