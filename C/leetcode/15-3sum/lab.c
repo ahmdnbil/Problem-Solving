@@ -1,5 +1,16 @@
 //Runtime error in leetcode 
 #define NULL 0
+
+/*
+steps of sol:-
+1- bubble sort algorthim (it will help to not repeate any there numbers)
+2- three for loop to navigate the arry
+3- check if sum equals 0 of each 3 elements of array
+4- if sum not equal 0 it will continue
+5- if sum equal 0 it will check if the the elements is used before or not
+6- if it's not used it will reallocate array of pointers to carry a new pointer
+7- then we mallocate the new numbers in the pointer 
+*/
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
  int **arr=0;
     int count=0,flag=0,temp;

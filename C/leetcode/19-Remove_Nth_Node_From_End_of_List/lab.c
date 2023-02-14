@@ -22,7 +22,6 @@ List* removeNthFromEnd(List* head, int n)
     if(count == 1) return NULL;
     while(counter->next !=NULL)
     {
-        // count-- ;
         if (count == n) return head->next;
         else if(count == n+1) 
         {
