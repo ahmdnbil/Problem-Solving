@@ -29,10 +29,8 @@ int stackSize(Stack *ps)
 {
     return ps->top;
 }
-int * stackArray(Stack *ps)
-{
-    return (ps->entry);
-}
+
+
 int removeDuplicates(int* nums, int numsSize)
 {
     int poped;
