@@ -13,7 +13,7 @@ List* swapNodes(List* head, int k){
     int second,first,temp;
     int count=0;
     
-    //counting linkedList
+    //counting linkedList Nodes
     while(ptr)
     {
         count++;
@@ -33,6 +33,7 @@ List* swapNodes(List* head, int k){
         first=second;
         second=temp;
     }
+    //if number of jumps equals 0
     if(!first) ptr2=head;
     while(count !=0)
     {
@@ -42,6 +43,7 @@ List* swapNodes(List* head, int k){
         count--;
         ptr=ptr->next;
     }
+    //swaping code
     first=ptr2->val;
     ptr2->val=ptr->val;
     ptr->val=first;
