@@ -1,5 +1,5 @@
 #Creating directory for a new problem in leetcode
-directory_name= 2095-Delete_the_Middle_Node_of_a_Linked_List
+directory_name= 2582-Pass_the_Pillow
 
 build:
-	cd leetcode && mkdir '$(directory_name)' && cd '$(directory_name)' && touch lab.c && code .
+	cd .. && git add C/Makefile && cd C/leetcode && mkdir '$(directory_name)' && cd '$(directory_name)' && touch lab.c && code .
