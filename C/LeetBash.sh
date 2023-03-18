@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="2535-ifference_Between_Element_Sum_and_Digit_Sum_of_an_Array"
+directory_name="268-Missing_Number"
 
 cd ..
 git add LeetBash.sh
