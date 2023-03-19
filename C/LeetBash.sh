@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="268-Missing_Number"
+directory_name="2169-Count_Operations_to_Obtain_Zero"
 
 cd ..
 git add LeetBash.sh
