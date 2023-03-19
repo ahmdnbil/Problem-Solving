@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="2169-Count_Operations_to_Obtain_Zero"
+directory_name="2154-Keep_Multiplying_Found_Values_by_Two"
 
 cd ..
 git add LeetBash.sh
