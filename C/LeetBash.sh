@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="2154-Keep_Multiplying_Found_Values_by_Two"
+directory_name="0605-Can_Place_Flowers"
 
 cd ..
 git add LeetBash.sh
