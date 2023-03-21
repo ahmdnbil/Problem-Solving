@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0912-Sort_an_Array"
+directory_name="0344-Reverse_String"
 
 cd ..
 git add LeetBash.sh
