@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0605-Can_Place_Flowers"
+directory_name="0912-Sort_an_Array"
 
 cd ..
 git add LeetBash.sh
