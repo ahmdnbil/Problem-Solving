@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0344-Reverse_String"
+directory_name="0392-Is_Subsequence"
 
 cd ..
 git add LeetBash.sh
