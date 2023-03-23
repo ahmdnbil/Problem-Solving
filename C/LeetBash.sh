@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0392-Is_Subsequence"
+directory_name="0492-Construct_the_Rectangle"
 
 cd ..
 git add LeetBash.sh
