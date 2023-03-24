@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0492-Construct_the_Rectangle"
+directory_name="0485-Max_Consecutive_Ones"
 
 cd ..
 git add LeetBash.sh
