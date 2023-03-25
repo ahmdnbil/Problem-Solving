@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0485-Max_Consecutive_Ones"
+directory_name="0278-First_Bad_Version"
 
 cd ..
 git add LeetBash.sh
