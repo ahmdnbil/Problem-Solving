@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0278-First_Bad_Version"
+directory_name="0520-Detect_Capital"
 
 cd ..
 git add LeetBash.sh
