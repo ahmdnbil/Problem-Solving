@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="0520-Detect_Capital"
+directory_name="2553-Separate_the_Digits_in_an_Array"
 
 cd ..
 git add LeetBash.sh
