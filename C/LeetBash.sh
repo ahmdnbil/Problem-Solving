@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_name="2553-Separate_the_Digits_in_an_Array"
+directory_name="0283-Move_Zeroes"
 
 cd ..
 git add LeetBash.sh
